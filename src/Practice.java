@@ -6,8 +6,17 @@ public class Practice {
      * @return the difference between the largest and smallest number
      */
     public static int maxDiff(int[] nums) {
-        // TODO: implement this
-        return -1;
+        int max = nums[0]; 
+        int min = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] < min){
+                min = nums[i];
+            }
+            if (nums[i] > max ) {
+                max = nums[i];
+            }
+        }
+        return max - min;
     }
 
 
