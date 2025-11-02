@@ -1,6 +1,7 @@
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import org.junit.jupiter.api.Test;
 
@@ -65,11 +66,33 @@ public class PracticeTest {
         assertEquals("", actual);
     }
 
+    @Test
+    void testCountWordsBetweenLengths() {
+        HashSet<String> words = new HashSet<>();
+        words.add("apple");
+        words.add("banana");
+        words.add("fig");
+        words.add("pear");
+        int actual = Practice.countWordsBetweenLengths(words, 2, 5);
+        assertEquals(2,actual);
+    }
 
+    @Test
+    void testCountWordsBetweenLengthsEmptySet() {
+        HashSet<String> words = new HashSet<>();
+        int actual = Practice.countWordsBetweenLengths(words, 2, 5);
+        assertEquals(0, actual);
+    }
 
-    
-
-
+    @Test
+    void testCountWordsBetweenLengthsAllMatch() {
+        HashSet<String> words = new HashSet<>();
+        words.add("pear");
+        words.add("fig");
+        words.add("plum");
+        int actual = Practice.countWordsBetweenLengths(words, 2, 5);
+        assertEquals(3, actual);
+    }
 }
 
 
