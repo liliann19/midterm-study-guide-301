@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.Test;
 
 public class PracticeTest {
@@ -29,6 +31,45 @@ public class PracticeTest {
         int actual = Practice.maxDiff(numbers);
         assertEquals(7, actual);
     }
+
+    @Test
+    void testLongStringSpecificCharWithSameLetter() {
+        ArrayList<String> words = new ArrayList<>();
+        words.add("apple");
+        words.add("apricot");
+        words.add("banana");
+        words.add("cherry");
+        String actual = Practice.longStringSpecificChar(words, "a");
+        assertEquals("apricot", actual);
+    }
+
+    @Test
+    void testLongStringSpecificCharWithCapital() {
+        ArrayList<String> words = new ArrayList<>();
+        words.add("apple");
+        words.add("apricot");
+        words.add("banana");
+        words.add("Cherry");
+        String actual = Practice.longStringSpecificChar(words, "c");
+        assertEquals("cherry", actual);
+    }
+
+    @Test
+    void testLongStringSpecificCharNoMatch() {
+        ArrayList<String> words = new ArrayList<>();
+        words.add("apple");
+        words.add("apricot");
+        words.add("banana");
+        words.add("Cherry");
+        String actual = Practice.longStringSpecificChar(words, "d");
+        assertEquals("", actual);
+    }
+
+
+
+    
+
+
 }
 
 

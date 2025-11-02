@@ -33,6 +33,6 @@ public class Practice {
                 }
             }
         }
-        return currentLongWord;
+        return currentLongWord.toLowerCase();
     }
 }
