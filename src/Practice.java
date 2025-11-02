@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Practice {
     /**
      * Returns the difference between the largest and smallest integer in an array.
@@ -19,10 +21,18 @@ public class Practice {
         return max - min;
     }
 
+    public static String longStringSpecificChar(ArrayList<String> words, String letter) {
+        String currentLongWord = "";
+        int currentLength = 0;
 
-    // TODO: Implement the other methods from the study guide AND tests for each one
-
-    // For each method you are only required to implement it for one of the data
-    // structures. But use a different data structure for each method. For example,
-    // do maxDiff with an array, the next question with a Set, etc.
+        for (String word : words){
+            if (word.toLowerCase().startsWith(letter.toLowerCase())) {
+                if(word.length() > currentLength) {
+                    currentLength = word.length();
+                    currentLongWord = word;
+                }
+            }
+        }
+        return currentLongWord;
+    }
 }
