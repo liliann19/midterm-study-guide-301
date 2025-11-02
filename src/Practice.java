@@ -35,4 +35,15 @@ public class Practice {
         }
         return currentLongWord.toLowerCase();
     }
+
+    public static int countWordsBetweenLengths(HashSet<String> words, int n, int m) {
+        int count = 0;
+        for (String word : words) {
+            int wordLength = word.length();
+            if (wordLength > n && wordLength < m){
+                count ++;
+            }
+        }
+        return count;
+    }
 }
