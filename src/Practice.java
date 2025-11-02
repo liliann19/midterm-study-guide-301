@@ -46,4 +46,19 @@ public class Practice {
         }
         return count;
     }
+
+    public static int diffBetweenOddEven(HashMap<Integer, Integer> numbers) {
+        int evenCount = 0;
+        int oddCount = 0;
+        for (int num : numbers.values()) {
+            if (num % 2 == 0) {
+                evenCount ++;
+            }
+            if (num % 2 != 0) {
+                oddCount ++;
+            }
+        }
+        return oddCount - evenCount;
+    }
+
 }
