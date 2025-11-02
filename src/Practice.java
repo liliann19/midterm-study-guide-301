@@ -10,6 +10,7 @@ public class Practice {
     public static int maxDiff(int[] nums) {
         int max = nums[0]; 
         int min = nums[0];
+
         for (int i = 1; i < nums.length; i++) {
             if (nums[i] < min){
                 min = nums[i];
@@ -38,6 +39,7 @@ public class Practice {
 
     public static int countWordsBetweenLengths(HashSet<String> words, int n, int m) {
         int count = 0;
+
         for (String word : words) {
             int wordLength = word.length();
             if (wordLength > n && wordLength < m){
@@ -50,6 +52,7 @@ public class Practice {
     public static int diffBetweenOddEven(HashMap<Integer, Integer> numbers) {
         int evenCount = 0;
         int oddCount = 0;
+
         for (int num : numbers.values()) {
             if (num % 2 == 0) {
                 evenCount ++;
@@ -61,4 +64,19 @@ public class Practice {
         return oddCount - evenCount;
     }
 
+    public static int findSecondLargestNum(HashMap<Integer, Integer> numbers){
+        int secondLarge = Integer.MIN_VALUE;
+        int large = Integer.MIN_VALUE;
+
+        for (int num : numbers.keySet()){
+            if (num > large) {
+                large = num;
+                secondLarge = large;
+            }
+            else if (num > secondLarge && num < large){
+                secondLarge = num;
+            }
+        }
+        return secondLarge;
+    }
 }
