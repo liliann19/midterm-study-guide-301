@@ -142,6 +142,22 @@ public class PracticeTest {
         assertEquals(3, actual);
     }
 
+    @Test
+    void testFindSecondLargestNumNegativeKeys() {
+        HashMap<Integer, Integer> numbers = new HashMap<>();
+        numbers.put(-2, 20);
+        numbers.put(-3, 30);
+        numbers.put(-5, 50);
+        int actual = Practice.findSecondLargestNum(numbers);
+        assertEquals(-3, actual);
+    }
+
+    @Test
+    void testFindSecondLargestNumEmptyMap() {
+        HashMap<Integer, Integer> numbers = new HashMap<>();
+        int actual = Practice.findSecondLargestNum(numbers);
+        assertEquals(0, actual);
+    }
 }
 
 

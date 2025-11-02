@@ -65,6 +65,10 @@ public class Practice {
     }
 
     public static int findSecondLargestNum(HashMap<Integer, Integer> numbers){
+        if (numbers.size() < 2){
+            return 0;
+        }
+        
         int secondLarge = Integer.MIN_VALUE;
         int large = Integer.MIN_VALUE;
 
