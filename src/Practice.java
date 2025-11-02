@@ -70,8 +70,8 @@ public class Practice {
 
         for (int num : numbers.keySet()){
             if (num > large) {
-                large = num;
                 secondLarge = large;
+                large = num;
             }
             else if (num > secondLarge && num < large){
                 secondLarge = num;

@@ -132,6 +132,15 @@ public class PracticeTest {
         assertEquals(3, actual);
     }
 
+    @Test
+    void testFindSecondLargestNum() {
+        HashMap<Integer, Integer> numbers = new HashMap<>();
+        numbers.put(2, 20);
+        numbers.put(3, 30);
+        numbers.put(5, 50);
+        int actual = Practice.findSecondLargestNum(numbers);
+        assertEquals(3, actual);
+    }
 
 }
 
